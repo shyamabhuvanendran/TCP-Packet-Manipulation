@@ -13,9 +13,7 @@ import numpy as np
 import pandas as pd
 
 def pcapToCsv(fname):
-    #f = open('SynFlood_Sample.pcap')
     pkts=rdpcap(fname)
-    #pcap = dpkt.pcap.Reader(f)
     outfile='output.csv'
     with open(outfile, 'w', newline='') as csvfile:
         fieldnames = ['dst', 'src', 'type', 'IP version', 'IP ihl', 'IP tos','IP len', 'IP id', 'IP flags', 'IP frag', 'IP ttl',
